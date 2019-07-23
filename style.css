@@ -1,0 +1,704 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Creepster&display=swap');
+
+* {
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+*::before, *::after { box-sizing: border-box; }
+
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: floralWhite;
+}
+
+noscript {
+  display: block;
+  width: 100%;
+  margin: -50px auto 50px auto;
+  padding: 25px;
+  color: rgb(200, 0, 0);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: white;
+  border: 2px solid rgb(200, 0, 0);;
+  border-radius: 0px;
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+}
+
+noscript strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+main {
+  min-height: 100vh;
+  padding: 25px;
+}
+
+section {
+  margin-top: 100px;
+}
+
+
+hr {
+  border-style:solid;
+  border: 0.5px solid black;
+  margin: 50px auto;
+  width: 90%;
+}
+
+/* =============================================================================
+                                 Typography
+============================================================================= */
+
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 25px 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 28px; }
+h4 { font-size: 24px; }
+h5 { font-size: 20px; }
+h6 { font-size: 16px;}
+
+p {
+  margin-top: 0;
+  margin-bottom: 32px;
+  line-height: 2;
+}
+
+pre {
+  display: block;
+  width: 90%;
+  margin: 32px auto;
+  padding: 0;
+  color: #333;
+  font-family: monospace;
+  font-size: 16px;
+  background-color: white;
+  border: 2px solid #61DAFB;
+  border-radius: 5px;
+  overflow: auto;
+  -ms-overflow-style: scrollbar;
+}
+
+pre code {
+  position: relative;
+  line-height: 1.15;
+  padding: 0;
+  color: violet;
+  background-color: transparent;
+  border: none;
+  border-radius: 0px;
+}
+
+code {
+  padding: 0 5px;
+  color: violet;
+  background-color: white;
+  border: 1px solid violet;
+  border-radius: 5px;
+}
+
+a {
+  color: #61DAFB;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul {
+  margin: 50px 0;
+}
+
+li {
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+button,
+[type="button"]
+[type="reset"],
+[type="submit"] {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1.5;
+  text-transform: none;
+  border-radius: 0;
+  overflow: visible;
+  -webkit-appearance: button;
+}
+
+button:not(:disabled),
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled) {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+.highlight {
+  color: #61DAFB;
+}
+
+.aside {
+  width: 90%;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: floralwhite;
+  border: 1px solid #282c34;
+  border-radius: 5px;
+}
+
+
+/* =============================================================================
+                              header styles
+============================================================================= */
+
+
+header {
+  width: 100%;
+  margin-bottom: 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+}
+
+header h1 {
+  text-align:center;
+}
+
+
+/* ================================
+          nav styles
+================================ */
+
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+  background-color: #61DAFB;
+  border-bottom: 1px solid #282c34;
+}
+
+.primary-nav a {
+  padding: 20px 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  text-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#home-link {
+  width: 200px;
+  margin: 0;
+  padding: 0px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#home-link img {
+  display: block;
+  width: 150px;
+  margin: 0px auto;
+  padding: 2px 4px;
+  background-color: white;
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow:  -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#home-link img:hover {
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+.primary-nav a:hover {
+  text-decoration: none;
+  color: violet;
+}
+
+
+/* ================================
+          #login-form
+================================ */
+
+
+#login-form {
+  /* By setting the left margin to auto it pushes everything to the right. */
+  margin: 0 10px 0 auto;
+  padding: 0;
+}
+
+#login-form input {
+  max-width: 150px;
+  margin: 0 5px 0 0;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 2px 0px rgba(0,0,0,0.5);
+}
+
+#login-form input.submit {
+  display: inline-block;
+  min-width: 75px;
+  margin: 0;
+  padding: 5px;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(102,255,0);
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#login-form input.submit:hover {
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+
+/* ================================
+          #register-link
+================================ */
+
+
+#register-link {
+  display: inline-block;
+  min-width: 75px;
+  margin: 0 25px 0 0;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  text-shadow:none;
+  background-color: violet;
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#register-link:hover {
+  color: white;
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+
+/* ================================
+          #logout-form
+================================ */
+
+
+#logout-form {
+  /* By setting the left margin to auto it pushes everything to the right. */
+  margin: 0 25px 0 auto;
+  padding: 0;
+}
+
+#logout-form input.submit {
+  display: inline-block;
+  min-width: 75px;
+  margin: 0;
+  padding: 5px;
+  font-size: 16px;
+  color: white;
+  background-color: violet;
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#logout-form input.submit:hover {
+  background-color: rgb(200,0,0);
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+
+/* ================================
+          #header-banner
+================================ */
+
+
+#header-banner {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #282c34;
+}
+
+
+/* =============================================================================
+                                  footer
+============================================================================= */
+
+
+footer {
+  width: 100%;
+  /* Use padding: 1px 0 to prevent potential margin collapse,
+  or set padding as needed. */
+  padding: 25px;
+  background-color: #61DAFB;
+  border-top: 1px solid #282c34;
+}
+
+.footer-icon-container {
+  text-align: center;
+  font-size: 0; /* To fix the anchor tags which are inline. */
+}
+
+.footer-icon-container a {
+  color: black;
+}
+
+.footer-icon-container a:hover {
+  text-decoration: none;
+}
+
+.footer-icon {
+  position: relative;
+  width: 40px;
+  margin-right: 5px;
+  background-color:white;
+  border: 1px solid #282c34;
+  border-radius: 50px;
+  box-shadow:none;
+  transform: scale(1);
+  transition: all .15s;
+}
+
+.footer-icon:hover {
+  cursor: pointer;
+  transform: scale(1.75);
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.25);
+  z-index: 1;
+}
+
+
+/* ================================
+        #delete-form
+================================ */
+
+
+#delete-form {
+  margin: 0 auto;
+  padding: 0;
+}
+
+#delete-form input.submit {
+  display: block;
+  min-width: 75px;
+  margin: 15px auto 0 auto;
+  padding: 5px;
+  font-size: 16px;
+  color: white;
+  background-color: rgb(200,0,0);
+  background-color: violet;
+  border: 1px solid rgb(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: -2px 2px 4px rgba(0,0,0,0.15);
+}
+
+#delete-form input.submit:hover {
+  background-color: rgb(200,0,0);
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.5);
+}
+
+
+/* =============================================================================
+                              #registration-form
+============================================================================= */
+
+
+#registration-form {
+  width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #61DAFB;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+}
+
+#registration-form h3 {
+  margin: 0;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+#registration-form .form-group {
+  margin-bottom: 25px;
+}
+
+#registration-form .submit-group {
+  text-align: center;
+}
+
+#registration-form label {
+  color: #282c34;
+  font-weight: bold;
+}
+
+#registration-form input {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+
+#registration-form .submit-group .submit {
+  color: white;
+  background-color: violet;
+}
+
+#registration-form .submit-group .submit:hover {
+  background-color: rgb(102,255,0);
+}
+
+
+/* =============================================================================
+                                 #form-errors-div
+============================================================================= */
+
+
+#form-errors-div { }
+
+#form-errors-ul {
+  width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #61DAFB;
+  border: 1px solid rgba(0,0,0,0.5);
+  border-radius: 5px;
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+}
+
+#form-errors-ul h3 {
+  font-family: "Creepster";
+  font-size: 60px;
+  text-align: center;
+  color: rgb(200,0,0);
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+
+#form-errors-ul li {
+  text-align: center;
+  color: rgb(200,0,0);
+  background-color:white;
+  border: 1px solid rgb(200,0,0);
+  border-radius: 5px;
+  list-style: none;
+}
+
+
+/* =============================================================================
+                               #toast-div
+============================================================================= */
+
+
+#toast-div {
+  visibility: hidden;
+  position: fixed;
+  right: 50px;
+  top: 100px;     /* Any changes to this value must also be changed in the animation. */
+  width: 250px;
+  padding: 16px;
+  color: #282c34;
+  text-align: center;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  background-color: white;
+  border: 2px solid #61DAFB;
+  border-radius: 5px;
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+  z-index: 1; /* Add a z-index if needed */
+}
+
+#toast-div.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation:         fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+
+/* ================================
+        fadein animation
+================================ */
+
+
+@-webkit-keyframes fadein {
+  from {right: -250px; opacity: 0;}
+  to   {right: 50px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {right: -250px; opacity: 0;}
+  to   {right: 50px; opacity: 1;}
+}
+
+
+/* ================================
+        fadeout animation
+================================ */
+
+
+@-webkit-keyframes fadeout {
+  from {right: 50px; opacity: 1;}
+  to   {right: -250px; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {right: 50px; opacity: 1;}
+  to   {right: -250px; opacity: 0;}
+}
+
+
+/* =============================================================================
+                              #message-div
+============================================================================= */
+
+
+#message-div {
+  position: fixed;
+  right: 50px;
+  top: 100px;
+  width: 250px;
+  padding: 16px;
+  color: #282c34;
+  text-align: center;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  background-color: white;
+  border: 2px solid #61DAFB;
+  border-radius: 5px;
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+  z-index: 1; /* Add a z-index if needed */
+}
+
+
+/* =============================================================================
+                              #forbidden-error-div
+============================================================================= */
+/**/
+
+#forbidden-error-div {
+  width: 500px;
+  margin: 50px auto;
+  padding: 25px;
+  text-align: center;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+  background-color: white;
+  border: 2px solid #61DAFB;
+  border-radius: 5px;
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+  box-shadow: -5px 5px 5px rgba(0,0,0,0.15);
+}
+
+
+
+/* =============================================================================
+                              .url-list
+============================================================================= */
+
+
+.url-list {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 0 50px 0;
+  padding: 0;
+  background-color: white;
+  list-style-type: none;
+  border: 2px solid #61DAFB;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.url-list li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-top: 0.5px solid transparent;
+  border-bottom: 0.5px solid transparent;
+}
+
+.url-list li:hover {
+  background-color: violet;
+  border-top: 0.5px solid #282c34;
+  border-bottom: 0.5px solid #282c34;
+}
+
+.url-list li:first-of-type:hover {
+  border-top: 0.5px solid transparent;
+}
+
+.url-list li:last-of-type:hover {
+  border-bottom: 0.5px solid transparent;
+}
+
+.list-link {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 15px 30px;
+  text-align: center;
+  color: #282c34;
+  font-family: courier;
+  font-size: 14px;
+}
+
+.url-list li:first-of-type .list-link {
+  padding-top: 30px;
+}
+
+.url-list li:last-of-type .list-link {
+  padding-bottom: 30px;
+}
+
+.url-list li:hover .list-link {
+  text-decoration: none;
+  color: white;
+}
+
+
+
+
+/**/

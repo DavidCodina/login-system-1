@@ -1,0 +1,14 @@
+# Deny access to .htaccess
+<Files .htaccess>
+Order allow,deny
+Deny from all
+</Files>
+
+# Disable directory browsing
+Options -Indexes
+
+# the following prevents display of the filetohide file
+<files config.php>
+order allow,deny
+deny from all
+</files>
